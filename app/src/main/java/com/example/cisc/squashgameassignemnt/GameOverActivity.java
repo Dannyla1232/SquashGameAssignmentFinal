@@ -10,25 +10,25 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
 
-public class MainActivity extends Activity implements View.OnClickListener {
-
+public class GameOverActivity extends Activity implements View.OnClickListener {
 
     private SoundPool soundpool;
     int sample1 = -1;
-    TextView textScore;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_game_over1);
 
-        Button buttonPlay = (Button) findViewById(R.id.buttonPlay);
-        buttonPlay.setOnClickListener(this);
+
+        Button buttonRetry = (Button) findViewById(R.id.buttonRetry);
+        buttonRetry.setOnClickListener(this);
 
         soundpool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
         try {
@@ -50,8 +50,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         }
 
-    }
 
+    }
 
     @Override
     public void onClick(View v) {
